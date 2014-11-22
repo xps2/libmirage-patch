@@ -1,0 +1,289 @@
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-cso/CMakeLists.txt ./libmirage-3.0.1/filters/filter-cso/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-cso/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-cso/CMakeLists.txt	2014-11-18 10:06:35.000000000 +0900
+@@ -19,7 +19,7 @@
+         filter-stream.c
+         plugin.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-daa/CMakeLists.txt ./libmirage-3.0.1/filters/filter-daa/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-daa/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-daa/CMakeLists.txt	2014-11-18 10:06:36.000000000 +0900
+@@ -25,7 +25,7 @@
+         lzma-sdk/Bra86.c
+         lzma-sdk/LzmaDec.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-dmg/CMakeLists.txt ./libmirage-3.0.1/filters/filter-dmg/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-dmg/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-dmg/CMakeLists.txt	2014-11-18 10:06:36.000000000 +0900
+@@ -23,7 +23,7 @@
+         plugin.c
+         resource-fork.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-ecm/CMakeLists.txt ./libmirage-3.0.1/filters/filter-ecm/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-ecm/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-ecm/CMakeLists.txt	2014-11-18 10:06:37.000000000 +0900
+@@ -10,7 +10,7 @@
+         filter-stream.c
+         plugin.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-gzip/CMakeLists.txt ./libmirage-3.0.1/filters/filter-gzip/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-gzip/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-gzip/CMakeLists.txt	2014-11-18 10:06:38.000000000 +0900
+@@ -19,7 +19,7 @@
+         filter-stream.c
+         plugin.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-isz/CMakeLists.txt ./libmirage-3.0.1/filters/filter-isz/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-isz/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-isz/CMakeLists.txt	2014-11-18 10:06:39.000000000 +0900
+@@ -21,7 +21,7 @@
+         filter-stream.c
+         plugin.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-macbinary/CMakeLists.txt ./libmirage-3.0.1/filters/filter-macbinary/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-macbinary/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-macbinary/CMakeLists.txt	2014-11-18 10:06:40.000000000 +0900
+@@ -12,7 +12,7 @@
+         ../filter-dmg/resource-fork.c
+         ../filter-dmg/adc.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-sndfile/CMakeLists.txt ./libmirage-3.0.1/filters/filter-sndfile/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-sndfile/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-sndfile/CMakeLists.txt	2014-11-18 10:06:40.000000000 +0900
+@@ -22,7 +22,7 @@
+         filter-stream.c
+         plugin.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${SNDFILE_LIBRARIES} ${SAMPLERATE_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${SNDFILE_LIBRARIES} ${SAMPLERATE_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/filters/filter-xz/CMakeLists.txt ./libmirage-3.0.1/filters/filter-xz/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/filters/filter-xz/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/filters/filter-xz/CMakeLists.txt	2014-11-18 10:06:41.000000000 +0900
+@@ -19,7 +19,7 @@
+         filter-stream.c
+         plugin.c
+     )
+-    target_link_libraries(${filter_name} ${GLIB_LIBRARIES} ${LIBLZMA_LIBRARIES})
++    target_link_libraries(${filter_name} mirage ${GLIB_LIBRARIES} ${LIBLZMA_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${filter_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-b6t/CMakeLists.txt ./libmirage-3.0.1/images/image-b6t/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-b6t/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-b6t/CMakeLists.txt	2014-11-18 09:58:30.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-c2d/CMakeLists.txt ./libmirage-3.0.1/images/image-c2d/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-c2d/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-c2d/CMakeLists.txt	2014-11-18 10:02:07.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-ccd/CMakeLists.txt ./libmirage-3.0.1/images/image-ccd/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-ccd/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-ccd/CMakeLists.txt	2014-11-18 10:02:08.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-cdi/CMakeLists.txt ./libmirage-3.0.1/images/image-cdi/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-cdi/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-cdi/CMakeLists.txt	2014-11-18 10:02:09.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-cif/CMakeLists.txt ./libmirage-3.0.1/images/image-cif/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-cif/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-cif/CMakeLists.txt	2014-11-18 10:02:10.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-cue/CMakeLists.txt ./libmirage-3.0.1/images/image-cue/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-cue/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-cue/CMakeLists.txt	2014-11-18 10:02:11.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-harddisk/CMakeLists.txt ./libmirage-3.0.1/images/image-harddisk/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-harddisk/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-harddisk/CMakeLists.txt	2014-11-18 10:02:12.000000000 +0900
+@@ -10,7 +10,7 @@
+         partition-tables.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-iso/CMakeLists.txt ./libmirage-3.0.1/images/image-iso/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-iso/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-iso/CMakeLists.txt	2014-11-18 10:02:12.000000000 +0900
+@@ -10,7 +10,7 @@
+         plugin.c
+         writer.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-mds/CMakeLists.txt ./libmirage-3.0.1/images/image-mds/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-mds/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-mds/CMakeLists.txt	2014-11-18 10:02:13.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-mdx/CMakeLists.txt ./libmirage-3.0.1/images/image-mdx/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-mdx/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-mdx/CMakeLists.txt	2014-11-18 10:02:14.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-nrg/CMakeLists.txt ./libmirage-3.0.1/images/image-nrg/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-nrg/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-nrg/CMakeLists.txt	2014-11-18 10:02:15.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-readcd/CMakeLists.txt ./libmirage-3.0.1/images/image-readcd/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-readcd/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-readcd/CMakeLists.txt	2014-11-18 10:02:17.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-toc/CMakeLists.txt ./libmirage-3.0.1/images/image-toc/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-toc/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-toc/CMakeLists.txt	2014-11-18 10:02:18.000000000 +0900
+@@ -10,7 +10,7 @@
+         plugin.c
+         writer.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/images/image-xcdroast/CMakeLists.txt ./libmirage-3.0.1/images/image-xcdroast/CMakeLists.txt
+--- ./libmirage-3.0.1_orig/images/image-xcdroast/CMakeLists.txt	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/images/image-xcdroast/CMakeLists.txt	2014-11-18 10:02:19.000000000 +0900
+@@ -9,7 +9,7 @@
+         parser.c
+         plugin.c
+     )
+-    target_link_libraries(${image_name} ${GLIB_LIBRARIES})
++    target_link_libraries(${image_name} mirage ${GLIB_LIBRARIES})
+ 
+     # Disable library prefix
+     set_target_properties(${image_name} PROPERTIES PREFIX "")
+diff -u -r ./libmirage-3.0.1_orig/mirage/utils.c ./libmirage-3.0.1/mirage/utils.c
+--- ./libmirage-3.0.1_orig/mirage/utils.c	2014-07-26 05:15:44.000000000 +0900
++++ ./libmirage-3.0.1/mirage/utils.c	2014-11-22 09:57:25.000000000 +0900
+@@ -664,6 +664,9 @@
+ {
+     guint16 crc = 0;
+ 
++    if (!data || !crctab) {
++        return NULL;
++    }
+     g_assert(data && crctab);
+ 
+     if (!reflected) {
